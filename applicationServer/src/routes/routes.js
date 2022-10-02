@@ -9,7 +9,7 @@ const experimentsController = require("./../controllers/experimentController");
 const routes = express.Router();
 
 //session router validate 
-routes.post('/enter', sessionController.create);
+routes.post('/enter/:id', sessionController.create);
 
 //users routes
 routes.get("/users", userController.seeAllUser);
