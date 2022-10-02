@@ -3,6 +3,7 @@ const userController = require('./../controllers/userController');
 const profileController = require("./../controllers/profileController");
 const sessionController = require("../controllers/sessionController");
 const tutorialsController = require("../controllers/tutorialsController");
+const feedController = require("../controllers/feedController")
 const experimentsController = require("./../controllers/experimentController");
 
 const routes = express.Router();
@@ -25,5 +26,12 @@ routes.get("/tutorial", tutorialsController.seeAllTutorials);
 routes.get("/profile-experiment", profileController.seeOnlyTuto);
 routes.post("/tutorial", tutorialsController.createTutorial);
 routes.delete("/deleteTutorial/:id",tutorialsController.deleteTutorial);
+
+//feed
+routes.get("/feed", feedController.seeAllposts);
+routes.get("/myFeed", profileController.seeOnlyPost);
+routes.post("/feed", feedController.createPost);
+routes.delete("/deleteFeed/:id",feedController.deletePost);
+
 
 module.exports = routes;
