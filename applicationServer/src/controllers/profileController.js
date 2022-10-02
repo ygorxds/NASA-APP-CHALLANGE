@@ -22,6 +22,16 @@ module.exports = {
         .select('*');
 
         return response.json(tutorial)
+    },
+
+    async seeOnlyPost(request, response){
+        const user_id = request.headers.authorization;
+        
+        const posts = await connection('posts')
+        .where('user_id', user_id)
+        .select('*');
+
+        return response.json(posts)
     }
 
 
