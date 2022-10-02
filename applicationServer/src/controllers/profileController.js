@@ -12,5 +12,18 @@ module.exports = {
         .select('*');
 
         return response.json(experience)
+    },
+
+    async seeOnlyTuto(request, response){
+        const user_id = request.headers.authorization;
+        
+        const tutorial = await connection('tutorials')
+        .where('user_id', user_id)
+        .select('*');
+
+        return response.json(tutorial)
     }
+
+
+    
 }

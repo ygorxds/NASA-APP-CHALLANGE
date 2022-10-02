@@ -11,8 +11,9 @@
   "author": "Ygor Pereira, Lucas Pudó, Victor Nascimento e João Fernandes",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.1",
-    "knex": "^2.3.0",
+    "knex": "^2.0.0",
     "nodemon": "^2.0.20",
     "sqlite3": "^5.1.1"
   }
